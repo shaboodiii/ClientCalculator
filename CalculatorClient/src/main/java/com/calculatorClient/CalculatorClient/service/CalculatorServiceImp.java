@@ -47,9 +47,8 @@ public class CalculatorServiceImp implements CalculatorService{
         jsonObject.put("operator", body.getOperator());
 
         HttpEntity<String> request = new HttpEntity<>(jsonObject.toString(), headers);
-
-        Result jsonResult = restTemplate.postForObject(url, request, Result.class);
         System.out.println("Sending...");
+        Result jsonResult = restTemplate.postForObject(url, request, Result.class);
 
         System.out.println("Done!");
         return jsonResult;
