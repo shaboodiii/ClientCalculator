@@ -22,17 +22,15 @@ public class CalculatorServiceImp implements CalculatorService{
 
     private final ObjectMapper objectMapper = new ObjectMapper();
 
-    private static final Logger logger = LogManager.getLogger(CalculatorServiceImp.class);
-
     @Override
-    public Result calculate(Calculator body) throws JsonProcessingException {
+    public Result calculate(Calculator body)  {
         System.out.println("Calculate!");
         Result response = query(body);
         return response;
 
     }
 
-    private Result query(Calculator body) throws JsonProcessingException {
+    private Result query(Calculator body) {
 
         String url = "http://localhost:8082/ServerCalculate";
         System.out.println("Connecting...");

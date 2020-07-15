@@ -5,11 +5,11 @@ import javax.validation.constraints.Pattern;
 
 public class Calculator {
 
-    @NotBlank
+    @NotBlank(message = "Need number")
     private double xValue;
-    @NotBlank
+    @NotBlank(message = "Need number")
     private double yValue;
-    @Pattern(regexp = "^\\+|\\-|\\*|\\/$")
+    @Pattern(regexp = "^\\+|\\-|\\*|\\/$", message = "Must be valid operator")
     private String operator;
 
     public Calculator() {

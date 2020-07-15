@@ -29,10 +29,10 @@ public class CalculatorController {
     @PostMapping(value = "/calculator", consumes= MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public String addCalculator(@RequestParam(name="xValue") String xValue,
                                 @RequestParam(name="yValue") String yValue,
-                                @RequestParam(name="operator") String operator,
-                                Model model) throws JsonProcessingException {
+                                @RequestParam(name="operator") String operator) throws JsonProcessingException {
 
-        Calculator calculator = new Calculator(Double.parseDouble(xValue),Double.parseDouble(yValue),operator);
+
+        Calculator calculator = new Calculator(Double.parseDouble(xValue), Double.parseDouble(yValue), operator);
         Result result = calculatorService.calculate(calculator);
 
         return "redirect:/results/" + result.getResult();
